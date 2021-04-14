@@ -5,3 +5,8 @@
 
 
 <p><span>Sharing Data via Output() and EventEmitter (Child to Parent): </span>{{msgFromChild2}}</p>
+
+<!-- <p>Test: {{sibling1Msg}}</p> -->
+<app-sibling1></app-sibling1>
+<br>
+<app-sibling2 [sibling2Msg]="sibling1Msg"></app-sibling2>

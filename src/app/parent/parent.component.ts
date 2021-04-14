@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChildComponent } from './child/child.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
 
 @Component({
   selector: 'app-parent',
@@ -14,6 +15,9 @@ export class ParentComponent implements OnInit {
 
   @ViewChild(ChildComponent) child: any;
 
+  @ViewChild(Sibling1Component) sibling1: any;
+  sibling1Msg:string = "";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,7 +25,11 @@ export class ParentComponent implements OnInit {
 
   ngAfterViewInit(){
     Promise.resolve().then(()=>{
-      this.msgFromChild = this.child.childMsgInChild;      
+      this.msgFromChild = this.child.childMsgInChild;   
+    })
+
+    Promise.resolve().then(()=>{
+      this.sibling1Msg = this.sibling1.sibling1Msg;
     })
   }
 
