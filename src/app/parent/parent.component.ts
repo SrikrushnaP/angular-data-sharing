@@ -25,4 +25,10 @@ export class ParentComponent implements OnInit {
     })
   }
 
+  msgFromChild2: string = "";
+
+  receiveMessage($event: any) {
+    this.msgFromChild2 = $event
+  }
+
 }

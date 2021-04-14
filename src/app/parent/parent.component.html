@@ -1,4 +1,7 @@
 <p>parent works!</p>
-<app-child [childMsg]="parentMsg"></app-child>
+<app-child [childMsg]="parentMsg" (messageEvent)="receiveMessage($event)"></app-child>
 
-<span>Sharing Data via ViewChild (Child to Parent): </span>{{msgFromChild}}
+<p><span>Sharing Data via ViewChild (Child to Parent): </span>{{msgFromChild}}</p>
+
+
+<p><span>Sharing Data via Output() and EventEmitter (Child to Parent): </span>{{msgFromChild2}}</p>
